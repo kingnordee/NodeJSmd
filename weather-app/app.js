@@ -1,31 +1,27 @@
-const request = require('postman-request')
-const url = "http://api.weatherstack.com/current?access_key=" +
-    "e005e4f7554e5b4fc85c748655bb53c4&units=f&query="
+const forecast = require('./utils/forecast.js')
 
-// request({url: url, json: true}, (error, response) => {
-//     if(error){
-//         console.log("Unable to connect to the internet!")
-//     }else if(response.body.error){
-//         console.log(response.body.error.info)
-//     }else{
-//         data = response.body;
-//         console.log(`${data.current.temperature}degrees F, ${data.current.weather_descriptions[0]}`)
-//     }
-// })
+// forecast.forecast("Amherst")
 
-const geoCodeUrl = "https://api.mapbox.com/geocoding/v5/mapbox.places/" +
-    "Los%20Angeles.json?access_token=pk.eyJ1Ijoia2luZ25vcmQiLCJhIjoiY" +
-    "2p1bjdwbWZwMTFoczRhbXBkMGVxcDhwdSJ9.DH1yvIEpng2KTVRM42x8cw&limit=1"
+const args = process.argv
+if(args[2]){
+    // forecast.geocode(args[2], (error, response ) => {
+    //     if(error)
+    //         console.log(error)
+    //     else
+    //         forecast.weather(response.lat, response.lon, (err, res) => {
+    //             if(err)
+    //                 console.log(err)
+    //             else{
+    //                 console.log(response.location)
+    //                 console.log(`${res.body.current.temperature}-degrees F, ${res.body.current.weather_descriptions[0]}`)
+    //             }
+    //         })
+    // })
+    forecast.forecast(args[2])
+}
 
-request({url: geoCodeUrl, json: true}, (error, response) => {
-    if (error){
-        console.log("Unable to connect to the internet!")
-    }else if(!response.body.features || response.body.features.length<1){
-        console.log("Please enter a valid query")
-    }else{
-        // console.log(response.body.features)
-        const longitude = response.body.features[0].center[0]
-        const latitude = response.body.features[0].center[1]
-        console.log([longitude, latitude])
-    }
-})
+forecast.bycity("Lagos")
+
+
+
+
