@@ -23,6 +23,7 @@ const form = document.querySelector('form')
 form.addEventListener('submit', (e) => {
     e.preventDefault()
     // if(!input.value) return para.innerHTML = "Please enter a valid input"
+    para.innerHTML = `<i> Loading...</i>`
     fetch('/weather?address='+input.value)
         .then( response => {
             response.json().then( data => {

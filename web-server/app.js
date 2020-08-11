@@ -4,6 +4,7 @@ const hbs = require('hbs')
 const utils = require('./public/js/utils/forecast')
 
 const app = express()
+const host = process.env.PORT || 3000
 
 //setting up handlebars
 app.set('view engine', 'hbs')
@@ -71,6 +72,6 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000')
+app.listen(host, () => {
+    console.log(`Server is running on port ${host}`)
 })
