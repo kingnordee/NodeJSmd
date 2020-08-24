@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Landing</title>
+    <link rel="stylesheet" href="/css/chat.css">
+</head>
+<body>
+
+<div id="wrapper">
+    <div id="left">
+
+    </div>
+    <div id="rite">
+        <div id="messageDisplay">
+            <p id="bubble">
+                <span id="msgHeader"></span>
+                <span id="msgBody"></span>
+            </p>
+        </div>
+        <div id="form_buttons_wrapper">
+            <form action="#" id="actualForm">
+                <input id="formInput" type="text" placeholder="Enter a message" autofocus required>
+                <button id="sendButton" type="submit">Send</button>
+            </form>
+            <button id="sendLocation">Send Location</button>
+        </div>
+    </div>
+</div>
+
+<!-- SCRIPTS  SCRIPTS  SCRIPTS  SCRIPTS  SCRIPTS  SCRIPTS  SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+        integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/chat.js"></script>
+</body>
+</html>

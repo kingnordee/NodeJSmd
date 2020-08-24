@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+    font-family: Tahoma,Verdana,Segoe,sans-serif;
+    /*border: red 2px solid;*/
+}
+
+html,body{
+    background: #111826;
+}
+
+#wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111826;
+    height: 95vh;
+}
+
+#innerWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 350px;
+    background: azure;
+    padding: 30px;
+    border: darkcyan 3px solid;
+}
+
+#joinForm{
+    display: flex;
+    flex-direction: column;
+}
+
+#joinForm * {
+    margin: 20px;
+    border: none;
+}
+
+#joinButton{
+    color: azure;
+    background: darkcyan;
+}
+
+#name, #room{
+    background: azure;
+    border-bottom: darkcyan 1px solid;
+}
+
+
+#joinForm input, #joinForm button {
+    font-size: 1em;
+    padding: 10px;
+}
+
+input:focus, button:focus{
+    outline: none;
+}
+
+
